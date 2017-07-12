@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import render
 import json
@@ -6,7 +5,11 @@ import json
 # Create your views here.
 def index(request):
     return render(request, 'login.html')
-#    return HttpResponse('Hello World')
+
+def api_response(request):
+    data_dict = {'username': 'wangjian', 'password' : ''}
+    response_dict = {'error': 0, 'msg' : 'success', 'data':data_dict}
+    return HttpResponse(json.dumps(response_dict))
 
 def login(request):
     if request.method == 'POST':

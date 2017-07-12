@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from sign import views
+from sign.control import (user)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^index/$', views.index),
     url(r'^login/$', views.login),
+    url(r'^api_response/$', views.api_response),
+    url(r'^get_user_info/$', user.get_user_info)
 ]
