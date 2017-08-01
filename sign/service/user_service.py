@@ -14,8 +14,8 @@ class UserService(object):
     def get_user_info(self):
         user_info = User.objects.get(id=self.uid)
         user_info = {
-            'username':user_info.username,
-            'password':user_info.password,
-            'create_time':time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(user_info.create_time))
+            'username' : user_info.username,
+            'password' : user_info.password,
+            'create_time' : time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(user_info.create_time))
         }
         return user_info

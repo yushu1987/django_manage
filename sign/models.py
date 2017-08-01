@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import time
+import json
 
 # Create your models here.
 class User(models.Model):
