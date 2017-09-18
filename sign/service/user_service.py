@@ -19,3 +19,10 @@ class UserService(object):
             'create_time' : time.strftime("%Y-%m-%d %H:%M:%S",time.localtime(user_info.create_time))
         }
         return user_info
+
+    def get_all_user(self):
+        user_list = User.objects.all()
+        for user in user_list:
+            print user.username
+            print user.password
+        return user_list
